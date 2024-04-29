@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2016", // Compilar para ES6.
+    "module": "CommonJS", // Para usar o "const" e "require" nos imports.
+    "rootDir": "src", // Diretório onde estão os arquivos principais do sistema.
+    "outDir": "./dist", // Diretório de saída, onde será armazenado nosso código javascript quando compilado.
+    "moduleResolution": "Node", // Especifica como o typescript procura um arquivo de um determinado especificador de módulo.
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+  }
+}
