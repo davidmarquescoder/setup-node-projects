@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node-dev --inspect --ignore-watch node_module src/index.ts' -e ts",
-    "husky:prepare": "husky install",
-    "prepare": "husky install"
+    "husky:prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -24,9 +23,5 @@
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.7.1"
-  },
-  "lint-staged": {
-    "*.ts": "eslint --cache --fix",
-    "*.{js,css,md,ts}": "prettier --write"
   }
 }
