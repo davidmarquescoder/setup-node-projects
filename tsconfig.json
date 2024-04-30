@@ -7,6 +7,6 @@
     "moduleResolution": "Node", // Especifica como o typescript procura um arquivo de um determinado especificador de módulo.
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }
