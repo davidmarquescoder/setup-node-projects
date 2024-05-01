@@ -1,55 +1,87 @@
-# Setup NodeJS Projects
+# Setting Up Node.js Projects
 
-# Usage
+## Overview
 
-Run:
+This guide outlines the steps to set up a Node.js project with TypeScript, ESLint, Prettier, Husky, and lint-staged for consistent code quality and formatting.
 
-- npm install
-- npm run husky:prepare
+### Usage
 
-# How to created this setup? (Tutotial)
+Run the following commands after cloning the repository:
 
-## Git && GitHub
-Run:
+```bash
+npm install
+```
 
-> Initialize the git repository.
+```bash
+npm run husky:prepare
+```
 
-- git init
+## How to Create this Setup?
 
-Configure your git repository with .gitignore.
-Pattern commits: [Convetional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+### Git & GitHub
 
-> Initialize a node project.
+Initialize the git repository:
 
-- npm init -y
+```bash
+git init
+```
 
-## Dependences
+Configure your git repository with .gitignore and pattern commits following Conventional Commits:
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-> Install all dependences.
+### Node Project Initialization
+---
 
+Initialize a Node project:
+
+```bash
+npm init -y
+```
+
+### Dependencies
+---
+
+Install all dependencies:
+
+```bash
 - npm i typescript @types/node -D
-- npm i ts-node-dev nodemon -D
-- npm i eslint eslint-config-prettier @eslint/js prettier typescript-eslint -D
-- npm i husky lint-staged -D
+```
 
-## Documentations
+```bash
+npm i ts-node-dev nodemon -D
+```
 
-[typescript](https://www.typescriptlang.org/docs/)
-[ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
-[nodemon](https://www.npmjs.com/package/nodemon)
-[eslint](https://eslint.org/docs/latest/)
-[prettier](https://prettier.io/docs/en/)
-[lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2)
-[husky](https://typicode.github.io/husky/)
+```bash
+npm i eslint eslint-config-prettier @eslint/js prettier typescript-eslint -D
+```
 
-> Create tsconfig file.
+```bash
+npm i husky lint-staged -D
+```
 
-- tsc --init
+### Documentation
+---
 
-## Environment configs
+- [typescript](https://www.typescriptlang.org/docs/)
+- [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [ESLint](https://eslint.org/docs/latest/)
+- [Prettier](https://prettier.io/docs/en/)
+- [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2)
+- [Husky](https://typicode.github.io/husky/)
+
+### TypeScript Configuration
+---
+
+Create a tsconfig file:
+
+```bash
+tsc --init
+```
 
 Configure the tsconfig file like this:
 
+~~~
 {
     "compilerOptions": {
         "target": "ES2016",
@@ -59,21 +91,98 @@ Configure the tsconfig file like this:
         "moduleResolution": "Node",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "skipLibCheck": true,
+        "skipLibCheck": true
     }
 }
+~~~
 
-> Config package.json scripts.
+### Environment configs
+---
 
+Configure package.json scripts:
+
+~~~
 {
     "scripts": {
         "start:dev": "nodemon --watch 'src/' --exec 'ts-node-dev --inspect --ignore-watch node_module src/index.ts' -e ts",
-        "husky:prepare": "husky install",
+        "husky:prepare": "husky install"
     }
 }
+~~~
 
 Create src/index.ts file.
 
-## Eslint and Prettier configs
+### ESLint and Prettier configs
+---
 
+Configure eslint:
 
+```bash
+npx eslint --init
+```
+
+On eslint file add this configs:
+
+~~~
+"jest": true
+"project": ["./tsconfig.json"]
+~~~
+
+Create a file ".prettierrc.json and config it:
+
+~~~
+{
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2
+}
+~~~
+
+> Configure "format on save".
+
+> Press "ctrl + ," and search "format on save" and mark checkbox.
+
+> Search "default formatter" and select "Prettier - Code formatter".
+
+On eslint file, write config:
+
+```bash
+"prettier"
+```
+
+like this:
+
+~~~
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ]
+}
+~~~
+
+### Husky and lint-staged config
+---
+
+Run:
+
+```bash
+npm run husky:prepare
+```
+
+Create file ".lintstagedrc.json" and write this config:
+
+~~~
+{
+  "*.ts": ["npx eslint --fix 'src/**'", "npx prettier --check 'src/**'"]
+}
+~~~
+
+on pre-commit file of husky directory, write this:
+
+```bash
+npx lint-staged
+```
+
+All commands into this file are executed when you commit.
