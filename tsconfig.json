@@ -7,6 +7,10 @@
     "moduleResolution": "Node", // Especifica como o typescript procura um arquivo de um determinado especificador de módulo.
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["*"] // Todo path de importação que tiver um "@" antes da "/" ele vai referenciar nossa pasta raiz.
+    },
+    "baseUrl": "src" // Definimos a pasta raiz como sendo "src".
   }
 }

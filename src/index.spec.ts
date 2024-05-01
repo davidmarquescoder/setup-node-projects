@@ -1,4 +1,4 @@
-import Person from '.';
+import Person from '@/index';
 
 const name = 'David';
 const age = 25;
