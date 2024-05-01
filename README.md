@@ -186,3 +186,6 @@ npx lint-staged
 ```
 
 All commands into this file are executed when you commit.
+
+> chmod +x .husky/commit-msg > Comando para marcar um arquivo como "executável".
+> echo ".git/hooks/commit-msg \$1" > .husky/commit-msg > Cria um novo hook do husky para commit-msg
