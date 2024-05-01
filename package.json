@@ -8,7 +8,7 @@
     "husky:prepare": "husky install",
     "test": "jest --passWithNoTests",
     "test:watch": "npm test --watch",
-    "test-staged": "npm test --findRelatedTests",
+    "test:staged": "npm test --findRelatedTests",
     "git:del-last-commit": "git reset HEAD~1"
   },
   "keywords": [],

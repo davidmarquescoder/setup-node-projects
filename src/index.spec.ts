@@ -1,7 +1,8 @@
-function sum(x: number, y: number) {
-  return x + y;
-}
+import Person from '.';
+
+const name = 'David';
+const person = new Person();
 
 it('should sum', () => {
-  expect(sum(2, 2)).toBe(4);
+  expect(person.sayMyName(name)).toBe('David');
 });
