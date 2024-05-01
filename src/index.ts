@@ -1,14 +1,14 @@
-import Three from '@/one/two/three/three';
+import * as express from 'express';
+import { Request, Response } from 'express';
+import Person from '@/person';
 
-export default class Person {
-  sayMyName(name: string) {
-    return name;
-  }
+const app = express();
 
-  sayMyAge(age: number) {
-    return age;
-  }
-}
+app.get('/', (request: Request, response: Response) => {
+  response.send(new Person().sayMyName('Hi, my name is David!'));
+});
 
-console.clear();
-console.log(new Three().sayThree());
+app.listen(3333, () => {
+  console.clear();
+  console.log('Server Up. Listening on port 3333!');
+});

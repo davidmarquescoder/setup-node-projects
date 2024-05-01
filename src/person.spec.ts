@@ -1,4 +1,4 @@
-import Person from '@/index';
+import Person from '@/person'; // Agora com as configs passadas para o tsconfig eu não preciso mais usar "../" para voltar a até a pasta raiz (src).
 
 const name = 'David';
 const age = 25;
