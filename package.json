@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node-dev --inspect --ignore-watch node_module src/index.ts' -e ts",
     "husky:prepare": "husky install",
     "test": "jest --passWithNoTests",
