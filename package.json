@@ -6,6 +6,9 @@
   "scripts": {
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node-dev --inspect --ignore-watch node_module src/index.ts' -e ts",
     "husky:prepare": "husky install",
+    "test": "jest --passWithNoTests",
+    "test:watch": "npm test --watch",
+    "test-staged": "npm test --findRelatedTests",
     "git:del-last-commit": "git reset HEAD~1"
   },
   "keywords": [],
@@ -13,13 +16,16 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.1.1",
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.12.7",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
+    "jest": "^29.7.0",
     "lint-staged": "^15.2.2",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
+    "ts-jest": "^29.1.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.7.1"
