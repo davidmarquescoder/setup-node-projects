@@ -7,9 +7,9 @@
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node-dev --inspect --ignore-watch node_module src/index.ts' -e ts",
     "husky:prepare": "husky install",
     "test": "jest --passWithNoTests",
-    "test:watch": "npm test --watch",
-    "test:staged": "npm test --findRelatedTests",
-    "test:push": "npm test --coverage",
+    "test:watch": "jest --watch",
+    "test:staged": "jest --findRelatedTests",
+    "test:push": "jest --coverage",
     "git:del-last-commit": "git reset HEAD~1"
   },
   "keywords": [],
