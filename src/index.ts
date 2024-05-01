@@ -1,3 +1,5 @@
+import Three from '@/one/two/three/three';
+
 export default class Person {
   sayMyName(name: string) {
     return name;
@@ -7,3 +9,6 @@ export default class Person {
     return age;
   }
 }
+
+console.clear();
+console.log(new Three().sayThree());
